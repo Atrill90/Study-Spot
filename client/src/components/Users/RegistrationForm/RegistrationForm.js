@@ -3,7 +3,7 @@ import "./RegistrationForm.css";
 
 const RegistrationForm = props => (
   <div class="card w-75 mt-5 mx-auto p-4">
-   <form action="/auth/register" method = "POST">
+   <form action="/auth/register" method = "Post">
       <div className = "input form-group">
         <label className="mr-3" for="email">E-mail</label>
           <input className="form-control" placeholder = "Email" type="email" id="email" name="email"/>

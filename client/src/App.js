@@ -5,6 +5,7 @@ import Registration from "./pages/Registration";
 import Landing from "./pages/Landing";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
+import Login from "./pages/Login"
 const App = () => (
  
       <Router>  
@@ -13,7 +14,7 @@ const App = () => (
              <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/Register" component={Registration} />
-            {/* <Route exact path="/Login" component={Login} /> */}
+            <Route exact path="/Login" component={Login} />
             {/* <Route exact path="/Home" component={Home} />  */}
             {/* <Route component={NoMatch} /> */}
             </Switch>

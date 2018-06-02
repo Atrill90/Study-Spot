@@ -7,7 +7,10 @@ const Login= () => (
     <div>
     
      <Container fluid>
-      
+     <h1 class= "text-center"> Login </h1>
+      <LoginForm/>
       </Container>
       </div>
     );
+
+    export default Login;

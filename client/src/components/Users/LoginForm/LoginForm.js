@@ -12,7 +12,7 @@ const LoginForm = props => (
 
      <div className = "input form-group">
        <label for="userName">Password</label>
-          <input  className="form-control"   type="password" placeholder = "LoginUserName" id="loginPassword" name="loginUserName"/>
+          <input  className="form-control"   type="password" placeholder = "Password" id="loginPassword" name="loginUserName"/>
 
      </div>
      <button type="submit" class="btn btn-secondary">Submit</button>
