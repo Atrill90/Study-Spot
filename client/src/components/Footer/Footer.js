@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => (
 
 <footer className="footer">
-	<p id="footer-text" className="text-center"> Your Info Here </p>
+	<p id="footer-text" className="text-center"> Alex Trilling &copy; 2018 </p>
 </footer> 
 
 )

@@ -8,18 +8,18 @@ import Footer from "../src/components/Footer";
 const App = () => (
  
       <Router>  
-      <div>
-      <Navbar/>
-        <Switch>
-        <Route exact path="/" component={Landing} />
-       <Route exact path="/Register" component={Registration} />
-       {/* <Route exact path="/Login" component={Login} /> */}
-        {/* <Route exact path="/Home" component={Home} />  */}
-        {/* <Route component={NoMatch} /> */}
-        </Switch>
-        <Footer/>
+        <div>
+          <Navbar/>
+             <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/Register" component={Registration} />
+            {/* <Route exact path="/Login" component={Login} /> */}
+            {/* <Route exact path="/Home" component={Home} />  */}
+            {/* <Route component={NoMatch} /> */}
+            </Switch>
+          <Footer/>
       </div>
-      </Router>
+    </Router>
   
       )
 
