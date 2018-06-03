@@ -6,20 +6,16 @@ const AddSpotForm = props => (
     <form>
     <div className = "input form-group">
         <label className="mr-3" htmlFor="location">Location Name</label>
-          <input  onChange={props.handleChange} className="form-control" placeholder = "Location Name" type="text" id="locationName" name="locationName"/>
+          <input className="form-control" placeholder = "Location Name" type="text" id="locationName" name="locationName"/>
      </div>
 
-     <div className = "input form-group">
-        <label className="mr-3" htmlFor="address">Address</label>
-          <input  onChange={props.handleChange} className="form-control" placeholder = "Address"        type="text" id="address" name="address"/>
-     </div>
-     <div className = "input form-group">
-        <label className="mr-3" htmlFor="city">City</label>
-          <input  onChange={props.handleChange} className="form-control" placeholder = "Address" type="text" id="address" name="address"/>
+    <div className = "input form-group">
+        <label className="mr-3" htmlFor="email">E-mail</label>
+          <input  className="form-control" placeholder = "Email" type="email" id="email" name="email"/>
      </div>
      
 
-        <button onClick={props.formSubmission} type="submit" className="btn btn-secondary">Submit</button>
+        <button type="submit" className="btn btn-secondary">Submit</button>
     </form>
 </div>
 )
