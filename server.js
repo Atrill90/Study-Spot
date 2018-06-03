@@ -3,10 +3,22 @@ const path = require("path");
 const expressValidator = require('express-validator');
 const expressSession = require('express-sessions');
 const mongoose = require("mongoose");
-const routes = require("./routes");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
+
+//Load Models
+require("./models/Users");
+
+
+//Load Routes
+const auth = require("./routes/auth");
+
+
+
+//MongoConnect
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/StudySpot");
+
 
 const app = express();
 // Define middleware here
@@ -19,17 +31,28 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-
-// app.use(routes);
-
 // Send every request to the React app
 // Define any API routes before this runs
 // app.get("*", function(req, res) {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-//MongoConnect
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/StudySpot");
+
+
+//Use Routes
+app.use("/auth",auth);
+
+
+
+
+
+
+// If no API routes are hit, send the React app
+app.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/public/index.html"));
+});
+
+
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);

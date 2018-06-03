@@ -6,12 +6,12 @@ const LoginForm = props => (
     <form action="/auth/login" method = "POST">
 
     <div className = "input form-group">
-       <label for="userName">Username</label>
+       <label htmlFor="userName">Username</label>
           <input  className="form-control"  type="text" placeholder = "Username" id="loginUserName" name="loginUserName"/>
      </div>
 
      <div className = "input form-group">
-       <label for="userName">Password</label>
+       <label htmlFor="userName">Password</label>
           <input  className="form-control"   type="password" placeholder = "Password" id="loginPassword" name="loginUserName"/>
 
      </div>
