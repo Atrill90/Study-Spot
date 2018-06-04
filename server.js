@@ -5,7 +5,7 @@ const expressSession = require('express-sessions');
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3000;
+
 
 //Load Models
 require("./models/Users");
@@ -52,8 +52,8 @@ app.use(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
 
-
-
+//Server Setup
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
