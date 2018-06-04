@@ -9,11 +9,12 @@ class AddSpot extends Component {
     constructor (props){
     super(props)
     this.state = {
-      location: "",
-      firstName: "",
-      lastName: "",
-      userName: "",
-      password: ""
+      locationName: "",
+      noiseRating: 0,
+      outletRating: 0,
+      wifiRating: 0,
+      seatingRating: 0,
+      fDRating:0
     };
     this.handleChange= this.handleChange.bind(this);
 }
@@ -31,18 +32,18 @@ formSubmission = event => {
     event.preventDefault();
     console.log("hello there");
     this.setState({[event.target.name]: [event.target.value]});
-    console.log(this.state.email, this.state.firstName, this.state.lastName, this.state.userName, this.state.password);
-    this.userCreate();
+    console.log(this.state.locationName, this.state.noiseRating, his.state.outletRating, this.state.wifiRating, this.state.seatingRating);
+    this.spotCreate();
 }
 
 spotCreate = () => {
     console.log("new user's data goes here!");
-    let email  = this.state.email;
-    let firstName = this.state.firstName;
-    let lastName = this.state.lastName;
-    let userName = this.state.userName;
-    let password = this.state.password;
-    let body = {email: email, firstName: firstName, lastName: lastName, password: password}
+    let locationName  = this.state.locationName;
+    let noiseRating = this.state.noiseRating;
+    let outletRating = this.state.outletRating;
+    let wifiRating = this.state.wifiRating;
+    let seatingRating = this.state.seatingRating;
+    let body = {locationName: locationName, noiseRating: noiseRating, outletRating: outletRating, wifiRating: wifiRating, seatingRating: seatingRating}
     console.log(body);
     API.saveSpot(body).then(res =>{
         console.log(res);

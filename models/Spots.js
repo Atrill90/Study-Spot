@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const spotSchema = new Schema({
     location: { type: String, required: true },
     noiseRating: { type: Number, required: true },
     outletRating: { type: Number, required: true },
@@ -11,4 +11,4 @@ const userSchema = new Schema({
     date: { type: Date, default: Date.now }
   });
   
-   mongoose.model("Users", userSchema);
+   mongoose.model("Spots", spotSchema);
