@@ -6,10 +6,10 @@ import AddSpotForm from "../../components/Users/AddSpotForm"
 import API from "../../utils/API"
 
 class AddSpot extends Component {
-    constructor (){
-    super()
+    constructor (props){
+    super(props)
     this.state = {
-      email: "",
+      location: "",
       firstName: "",
       lastName: "",
       userName: "",
