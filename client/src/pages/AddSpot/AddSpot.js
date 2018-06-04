@@ -32,7 +32,7 @@ formSubmission = event => {
     event.preventDefault();
     console.log("hello there");
     this.setState({[event.target.name]: [event.target.value]});
-    console.log(this.state.locationName, this.state.noiseRating, his.state.outletRating, this.state.wifiRating, this.state.seatingRating);
+    console.log(this.state.locationName, this.state.noiseRating, this.state.outletRating, this.state.wifiRating, this.state.seatingRating);
     this.spotCreate();
 }
 

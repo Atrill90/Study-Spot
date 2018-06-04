@@ -21,7 +21,7 @@ handleChange = event => {
     console.log(event.target.value);
     console.log(event.target.name)
     this.setState({[event.target.name]: [event.target.value]});
-    // console.log(this.state.edate);
+
 }
 
 formSubmission = event => {
@@ -48,7 +48,7 @@ userCreate = () => {
         
     ).catch(err =>{
         console.log(err);
-        console.log(`errors anyone?`);
+    
     })
 }
 

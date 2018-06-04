@@ -1,59 +1,84 @@
 [
     {
       "id": 1,
-      "location": "UCF Library",
-      "image": "http://library.ucf.edu/wp-content/uploads/sites/5/2015/04/library-01.png",
-      "occupation": "Fry Cook",
-      "address": "A Pineapple Under the Sea"
+      "locationName": "UCF Library",
+      "noiseRating": 4,
+       "image": "http://1.bp.blogspot.com/_fhMQIvMfBPo/TKDnBmrgcYI/AAAAAAAAAA8/XdSr20mfcnA/s1600/KCView1.jpg",
+      "outletRating": 5,
+      "wifiRating" : 5,
+      "seatingRating" : 5,
+      "fDRating": 3
     },
     {
-      "id": 2,
-      "location": "Zed",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_1.jpg",
-      "occupation": "Restaurant Owner",
-      "address": "A Giant Anchor"
+        "id": 2,
+        "locationName": "Vespr",
+        "noiseRating": 5,
+         "image": "https://foodbidden.files.wordpress.com/2013/06/f77925ce-82c9-476b-9d05-d8aaa92f620417.jpg",
+        "outletRating": 3,
+        "wifiRating" : 4,
+        "seatingRating" : 2,
+        "fDRating": 4
     },
     {
-      "id": 3,
-      "location": "Teemo",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg",
-      "occupation": "Cashier",
-      "address": "An Easter Island Head"
+        "id": 3,
+        "locationName": "Coffee Factory",
+        "noiseRating": 3,
+         "image": "https://s3-media4.fl.yelpcdn.com/bphoto/nCGY_T_LNc-_iLNXdl6PHg/ls.jpg",
+        "outletRating": 2,
+        "wifiRating" : 3,
+        "seatingRating" : 3,
+        "fDRating": 3
     },
     {
-      "id": 4,
-      "location": "Varus",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Varus_2.jpg",
-      "occupation": "Boy Genius",
-      "address": "A Secret Laboratory"
+        "id": 4,
+        "locationName": "Panera Bread",
+        "noiseRating": 3,
+         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRKbhgojdLL_XxCeXUsEWdKN4Zngw4I-jxr3fYqkF24Tvd0vKZ8Q",
+        "outletRating": 2,
+        "wifiRating" : 3,
+        "seatingRating" : 3,
+        "fDRating": 4
     },
     {
-      "id": 5,
-      "location": "Ivern",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg",
-      "occupation": "A Cowardly Dog",
-      "address": "Nowhere, Kansas"
+        "id": 5,
+        "locationName": "Lazy Moon UCF",
+        "noiseRating": 2,
+         "image": "https://media2.fdncms.com/orlando/imager/lazy-moon-pizza/u/original/2326725/1518028.jpg",
+        "outletRating": 2,
+        "wifiRating" : 2,
+        "seatingRating" : 4,
+        "fDRating": 5
+    },
+    
+    {
+        "id": 6,
+        "locationName": "Lazy Moon Downtown",
+        "noiseRating": 2,
+         "image": "https://www.scottjosephorlando.com/images/stories/Lazy_Moon_tables.jpg",
+        "outletRating": 2,
+        "wifiRating" : 2,
+        "seatingRating" : 4,
+        "fDRating": 5
     },
     {
-      "id": 6,
-      "location": "Braum",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_1.jpg",
-      "occupation": "Student",
-      "address": "Bluffington"
+        "id": 7,
+        "locationName": "Snowbean",
+        "noiseRating": 5,
+         "image": "https://s3-us-west-2.amazonaws.com/wf-fileserver-sync/files/2017/05/105102-YV6ZDYDKTYSX6X0XOjPE-IMG_6050.JPGg",
+        "outletRating": 4,
+        "wifiRating" : 4,
+        "seatingRating" : 3,
+        "fDRating": 4
     },
     {
-      "id": 7,
-      "location": "Ezreal",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_3.jpg",
-      "occupation": "Looney Toon",
-      "address": "A Rabbit Burrow"
-    },
-    {
-      "id": 8,
-      "location": "Heimer",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Heimerdinger_2.jpg",
-      "occupation": "Ladies Man",
-      "address": "Aron City"
+        "id": 8,
+        "locationName": "Lineage",
+        "noiseRating": 4,
+         "image": "https://static1.squarespace.com/static/54467ddee4b0c418fe805f16/54aaa9fde4b0e8454945b6ed/5a7dbe0f08522928812377cd/1518190364848/PMC_0960.jpg?format=1000w",
+        "outletRating": 4,
+        "wifiRating" : 4,
+        "seatingRating" : 3,
+        "fDRating": 5
     },
     {
       "id": 9,
