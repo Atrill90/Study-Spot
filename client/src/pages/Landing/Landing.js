@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import "./Landing.css";
+import studying from "../../img/studying.jpg";
 const Landing = () => (
       <div>
       
@@ -18,6 +19,17 @@ const Landing = () => (
               </Jumbotron>
             </Col>
           </Row>
+          <Row>
+            <Col size= "md-12">
+              <div id ="studyPic">
+              </div>
+           </Col>
+         </Row>
+          <Row>
+            <Col size="md-12">
+            
+            </Col>
+         </Row>
         </Container>
         </div>
       );

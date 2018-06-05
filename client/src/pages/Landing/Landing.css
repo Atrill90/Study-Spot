@@ -4,3 +4,10 @@ h1,h3{
 .jumbotron{
     background-color:lightblue;
 }
+#studyPic{
+    background-image: url("../../img/studying.jpg");
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
