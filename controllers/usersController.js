@@ -10,7 +10,7 @@ const crypto = require('crypto');
 module.exports = {
     create: function(req, res) {
         let errors = [];
-        
+        console.log(req.body);
         if (req.body.password.length < 5) {
             errors.push({
                 text: "Password must be at least 5 characters"
@@ -18,7 +18,7 @@ module.exports = {
         }
         if (errors.length > 0) {
             //This will allow us to refresh the page but keep the users info populated if they cause an error.
-            res.render('users/register', {
+            res.send( {
                 errors: errors,
                 userName: req.body.userName,
                 email: req.body.email
@@ -33,26 +33,20 @@ module.exports = {
                     errors.push({
                         text: "User already exists, please choose a new username"
                     });
-                    res.redirect('http://localhost:3001/register', {
-                        errors: errors,
-                        email: req.body.email,
-                        firstName:req.body.firstName,
-                        lastName:req.body.lastName,
-                        userName: req.body.userName,
-                    });
+                    res.redirect('/auth/users/register');
                 } else {
                     let insecurePass = req.body.password;
                     bcrypt.genSalt(10, (err, salt) => {
                         bcrypt.hash(insecurePass, salt, (err, hash) => {
                             let newUser = {
-                                userName: req.body.userName,
+                                userName: req.body.userName.toLowerCase(),
                                 firstName: req.body.firstName,
                                 lastName:req.body.lastName,
                                 email: req.body.email,
                                 password: hash
                             }
                             User.create(newUser).then(function (user) {
-                                res.redirect('http://localhost:3001/login');
+                                res.redirect("/auth/users/login");
                             });
                         })
                     })
@@ -64,6 +58,13 @@ module.exports = {
         //   .create(req.body)
         //   .then(dbModel => res.json(dbModel))
         //   .catch(err => res.status(422).json(err));
+
+    },
+    read: function (req,res,next){
+        User.findOne({userName : req.body.userName})
+        .then((user) => {
+
+        })
 
     }
 }

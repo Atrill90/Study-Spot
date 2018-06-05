@@ -18,32 +18,35 @@ class Registration extends Component {
 }
 
 handleChange = event => {
-    console.log(event.target.value);
-    console.log(event.target.name)
-    this.setState({[event.target.name]: [event.target.value]});
+   let name = event.target.name;
+   let value = event.target.value;
+
+    this.setState({[name]: value});
 
 }
 
 formSubmission = event => {
     event.preventDefault();
+    let name = event.target.name;
+    let value = event.target.value;
     console.log("hello there");
-    this.setState({[event.target.name]: [event.target.value]});
-    console.log(this.state.email, this.state.firstName, this.state.lastName, this.state.userName, this.state.password);
+    this.setState({[name]:value});
     this.userCreate();
+    
 }
 
 userCreate = () => {
     console.log("new user's data goes here!");
-    let email  = this.state.email;
-    let firstName = this.state.firstName;
-    let lastName = this.state.lastName;
-    let userName = this.state.userName;
-    let password = this.state.password;
-    let body = {email: email, firstName: firstName, lastName: lastName, password: password}
-    console.log(body);
-    API.saveUser(body).then(res =>{
+    let user ={
+        email :this.state.email,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        userName: this.state.userName,
+        password: this.state.password
+    }
+    API.saveUser(user).then(res =>{
         console.log(res);
-        console.log(`Hello`);
+        
     }
         
     ).catch(err =>{

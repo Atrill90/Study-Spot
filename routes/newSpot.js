@@ -1,4 +1,6 @@
 const router = require("express").Router();
-const usersController = require("../controllers/usersController");
+const spotsController = require("../controllers/spotsController");
 
 router.post("/spots", spotsController.create);
+
+module.exports = router;

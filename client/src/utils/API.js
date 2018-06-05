@@ -4,14 +4,14 @@ export default {
   // Gets all user
 
   // Gets the user with the given id
-  getUser: function(id) {
-    return axios.get("/api/login/" + id);
+  loginUser: function(id) {
+    return axios.get("/auth/users/login" + id);
   },
   
   // Saves a user to the database
   saveUser: function(userData) {
-    return axios.post("/api/users", userData);
-    console.log("we did it");
+    return axios.post("/auth/users/register", userData);
+    console.log("User saved");
   },
    // Saves a user to the database
    saveSpot: function(spotData) {
