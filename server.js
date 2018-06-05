@@ -13,6 +13,7 @@ require("./models/Users");
 
 //Load Routes
 const auth = require("./routes/auth");
+const newSpot = require ("./routes/newSpot");
 
 
 
@@ -41,6 +42,7 @@ if (process.env.NODE_ENV === "production") {
 
 //Use Routes
 app.use("/auth",auth);
+app.use("/newSpot",newSpot);
 
 
 
