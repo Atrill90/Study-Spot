@@ -2,24 +2,20 @@ import React, { Component } from "react";
 import "./LoginForm.css";
 
 const LoginForm = props => (
-<div class="card w-75 mt-5 mx-auto p-4">
-    <form action="/auth/login" method = "POST">
+<div className="card w-75 mt-5 mx-auto p-4">
+    <form>
 
     <div className = "input form-group">
        <label htmlFor="userName">Username</label>
-          <input  className="form-control"  type="text" placeholder = "Username" id="loginUserName" name="loginUserName"/>
+          <input onChange={props.handleChange} className="form-control"  type="text" placeholder = "Username" id="loginUserName" name="loginUserName"/>
      </div>
 
      <div className = "input form-group">
        <label htmlFor="userName">Password</label>
-          <input  className="form-control"   type="password" placeholder = "Password" id="loginPassword" name="loginUserName"/>
+          <input onChange={props.handleChange} className="form-control" type="password" placeholder = "Password" id="loginPassword" name="loginUserName"/>
 
      </div>
-     <button type="submit" class="btn btn-secondary">Submit</button>
-
-
-
-
+     <button onClick={props.formSubmission} type="submit" className="btn btn-secondary">Submit</button>
 </form>
  </div>
 )

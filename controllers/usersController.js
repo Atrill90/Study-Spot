@@ -54,16 +54,11 @@ module.exports = {
             })
         }
 
-        // User
-        //   .create(req.body)
-        //   .then(dbModel => res.json(dbModel))
-        //   .catch(err => res.status(422).json(err));
-
     },
     read: function (req,res,next){
-        User.findOne({userName : req.body.userName})
+        User.findOne({userName : req.body.userName.toLowerCase()})
         .then((user) => {
-
+            console.log(user);
         })
 
     }
