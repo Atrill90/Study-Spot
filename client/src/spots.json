@@ -81,31 +81,24 @@
         "fDRating": 5
     },
     {
-      "id": 9,
-      "location": "Ryze",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_1.jpg",
-      "occupation": "Adventurer",
-      "address": "California"
+        "id": 9,
+        "locationName": "StarDust Video & Coffee",
+        "noiseRating": 3,
+         "image": "https://s3-media2.fl.yelpcdn.com/bphoto/vwGXNf8YtHE7MINSqaoZOQ/348s.jpg",
+        "outletRating": 3,
+        "wifiRating" : 4,
+        "seatingRating" : 3,
+        "fDRating": 3
+        
     },
-    {
-      "id": 10,
-      "location": "Twisted Fate",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TwistedFate_0.jpg",
-      "occupation": "Cashier",
-      "address": "O-Town, California"
-    },
-    {
-      "id": 11,
-      "location": "Blitz",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_5.jpg",
-      "occupation": "Superhero",
-      "address": "Earth"
-    },
-    {
-      "id": 12,
-      "location": "Leona",
-      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_1.jpg",
-      "occupation": "Ahhhh! A Real Monster!",
-      "address": "Under a City Dump"
+    {   
+        "id": 10,
+        "locationName": "Tijuana Flats",
+        "noiseRating": 3,
+         "image": "https://s3-media1.fl.yelpcdn.com/bphoto/gDRbIGoSHpRzfLwYVrLLpg/348s.jpg",
+        "outletRating": 4,
+        "wifiRating" : 4,
+        "seatingRating" : 3,
+        "fDRating": 5
     }
   ]
