@@ -3,12 +3,19 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import "./Landing.css";
 import studying from "../../img/studying.jpg";
+import Map from "../../components/Map";
 const Landing = () => (
       <div>
       
        <Container fluid>
           <Row>
             <Col size="md-4">
+            <Map
+            center={{lat: 28.602, lng: -81.200 }}
+            zoom ={15}
+            containerElement ={<div style ={{height:100+'%'}}/>}
+            mapElement = {<div style ={{height:100+'%'}}/>}
+            />
               <h4> Map goes here </h4>
             </Col>
             <Col size="md-8">
