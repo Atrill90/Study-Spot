@@ -11,11 +11,11 @@ const Landing = () => (
           <Row>
             <Col size="md-4" id="map-col">
             <Map
-            center={{lat: 28.602, lng: -81.200 }}
-            zoom ={15}
-            //The next two props are required
-            containerElement ={<div style ={{height:100+'%'}}/>}
-            mapElement = {<div style ={{height:100+'%'}}/>}
+              center={{lat: 28.602, lng: -81.200 }}
+              zoom ={15}
+              //The next two props are required
+              containerElement ={<div style ={{height:100+'%'}}/>}
+              mapElement = {<div style ={{height:100+'%'}}/>}
             />
             </Col>
             <Col size="md-8" id="jumbo-col">
@@ -23,7 +23,7 @@ const Landing = () => (
                 <h1>Study Spot</h1>
                 <h3>
                   <span role="img" aria-label="World Emoji">
-                  🌎Find your spot to get shit done🌎
+                    🌎Find your spot to get shit done🌎
                   </span>
                 </h3>
               </Jumbotron>

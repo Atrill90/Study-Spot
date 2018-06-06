@@ -59,15 +59,13 @@ spotCreate = () => {
 }
 render() {
     return (
-      <div>
-          <Container>
-              <h1 className= "text-center"> Add a Spot! </h1>
-       <AddSpotForm
-       formSubmission = {this.formSubmission}
-       handleChange = {this.handleChange}
-       />
+        <Container>
+            <h1 className= "text-center"> Add a Spot! </h1>
+            <AddSpotForm
+                 formSubmission = {this.formSubmission}
+                 handleChange = {this.handleChange}
+            />
        </Container>
-        </div>
     );
 }
 }

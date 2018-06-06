@@ -16,10 +16,10 @@ const App = () => (
              <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/Register" component={Registration} />
-            <Route exact path="/Login" component={Login} />
-            <Route exact path="/AddSpot" component={AddSpot} /> 
-            <Route exact path="/Spots" component={Spots}/>
-            {/* <Route component={NoMatch} /> */}
+                <Route exact path="/Login" component={Login} />
+                <Route exact path="/AddSpot" component={AddSpot} /> 
+                <Route exact path="/Spots" component={Spots}/>
+                {/* <Route component={NoMatch} /> */}
             </Switch>
           <Footer/>
       </div>

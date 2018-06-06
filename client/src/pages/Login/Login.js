@@ -15,8 +15,7 @@ class Login extends Component {
     handleChange = event => {
         let name = event.target.name;
         let value = event.target.value;
-     
-         this.setState({[name]: value});
+        this.setState({[name]: value});
     
      }
      formSubmission = event => {
@@ -30,12 +29,10 @@ class Login extends Component {
     }
     render() {
         return (
-            <div>
-     <Container fluid>
-     <h1 className= "text-center"> Login </h1>
-      <LoginForm/>
-      </Container>
-      </div>
+            <Container fluid>
+                <h1 className= "text-center"> Login </h1>
+                <LoginForm/>
+             </Container>
         );
       }
 }

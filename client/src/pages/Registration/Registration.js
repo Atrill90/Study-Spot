@@ -58,15 +58,13 @@ userCreate = () => {
 
 render() {
     return (
-      <div>
-          <Container>
-              <h1 className= "text-center"> Registration </h1>
-       <RegistrationForm
-       formSubmission = {this.formSubmission}
-       handleChange = {this.handleChange}
-       />
-       </Container>
-        </div>
+        <Container>
+            <h1 className= "text-center"> Registration </h1>
+        <RegistrationForm
+            formSubmission = {this.formSubmission}
+            handleChange = {this.handleChange}
+        />
+        </Container>
     );
   }
   

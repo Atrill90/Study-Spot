@@ -4,17 +4,36 @@ class Map extends Component{
 
     constructor(){
         super()
-        this.state = {
-            map:null
+            this.state = {
+            map:null,
+            latitude :"",
+            longitude: ""
+
+
         }
     }
+    getLocation = event => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.showPosition);
+         }   else { 
+            console.log("Geolocation is not supported by this browser.");
+         }
+    };
+
+    showPosition = position => {
+        this.setState({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+        });
+        console.log(`${this.state.latitude} ${this.state.longitude}`);
+    };
 
     mapMoved (){
         console.log('Map Moved' +JSON.stringify(this.state.map.getCenter()));
     }
 
     zoomChanged(){
-    console.log('Zoom Changed'+ this.state.map.getZoom());
+        console.log('Zoom Changed'+ this.state.map.getZoom());
     }
 
     mapLoaded(map){
@@ -28,9 +47,9 @@ class Map extends Component{
     }
 
 
-    // componentDidMount(){
-    // this.getLocation();
-    // }
+    componentDidMount(){
+        this.getLocation();
+    }
 
 //     getLocation = callback =>{
 //     fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyApLeLjAqhg5nXoDlvzxKzmdv78-Qqh3F8`)
@@ -46,7 +65,6 @@ class Map extends Component{
     render (){
         const markers = this.props.markers || []
         return(
-            <div>  
             <GoogleMap
               ref={this.mapLoaded.bind(this)}
               onDragEnd={this.mapMoved.bind(this)}
@@ -55,11 +73,8 @@ class Map extends Component{
               defaultCenter={ this.props.center }>
               {markers.map((marker,index) => (
                     <Marker {...marker} />
-              )
-            )}
-             
+              ))}
             </GoogleMap>
-            </div>
         )
     }
 
