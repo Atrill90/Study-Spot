@@ -11,3 +11,6 @@ h1,h3{
     background-size: cover;
     background-attachment: fixed;
 }
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

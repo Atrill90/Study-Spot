@@ -8,7 +8,10 @@ const Landing = () => (
       
        <Container fluid>
           <Row>
-            <Col size="md-12">
+            <Col size="md-4">
+              <h4> Map goes here </h4>
+            </Col>
+            <Col size="md-8">
               <Jumbotron>
                 <h1>Study Spot</h1>
                 <h3>
@@ -27,7 +30,9 @@ const Landing = () => (
          </Row>
           <Row>
             <Col size="md-12">
-            
+              <div className ="text-center">
+                <h2> Sick of stuyding at home? Check out the spots page for a new place to hit the books! </h2>
+              </div>  
             </Col>
          </Row>
         </Container>

@@ -37,17 +37,19 @@ formSubmission = event => {
 }
 
 spotCreate = () => {
-    console.log("new user's data goes here!");
-    let locationName  = this.state.locationName;
-    let noiseRating = this.state.noiseRating;
-    let outletRating = this.state.outletRating;
-    let wifiRating = this.state.wifiRating;
-    let seatingRating = this.state.seatingRating;
-    let body = {locationName: locationName, noiseRating: noiseRating, outletRating: outletRating, wifiRating: wifiRating, seatingRating: seatingRating}
-    console.log(body);
-    API.saveSpot(body).then(res =>{
+    console.log("new spot data goes here!");
+    let spot ={
+        locationName: this.state.locationName,
+        noiseRating: this.state.noiseRating,
+        outletRating: this.state.outletRating,
+        wifiRating: this.state.wifiRating,
+        seatingRating: this.state.seatingRating
+    }
+    
+    console.log(spot);
+    API.saveSpot(spot).then(res =>{
         console.log(res);
-        console.log(`Hello`);
+        console.log(`Spot saved successfully`);
     }
         
     ).catch(err =>{
