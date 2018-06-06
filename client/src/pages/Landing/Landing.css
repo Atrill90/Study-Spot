@@ -14,3 +14,10 @@ h1,h3{
 h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+#map-col, #jumbo-col {
+    padding: 0px;
+}
+#studyPic-col{
+    padding: 0px;
+}

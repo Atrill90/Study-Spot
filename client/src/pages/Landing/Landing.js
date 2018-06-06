@@ -9,16 +9,16 @@ const Landing = () => (
       
        <Container fluid>
           <Row>
-            <Col size="md-4">
+            <Col size="md-4" id="map-col">
             <Map
             center={{lat: 28.602, lng: -81.200 }}
             zoom ={15}
+            //The next two props are required
             containerElement ={<div style ={{height:100+'%'}}/>}
             mapElement = {<div style ={{height:100+'%'}}/>}
             />
-              <h4> Map goes here </h4>
             </Col>
-            <Col size="md-8">
+            <Col size="md-8" id="jumbo-col">
               <Jumbotron>
                 <h1>Study Spot</h1>
                 <h3>
@@ -30,7 +30,7 @@ const Landing = () => (
             </Col>
           </Row>
           <Row>
-            <Col size= "md-12">
+            <Col size= "md-12" id ="studyPic-col">
               <div id ="studyPic">
               </div>
            </Col>

@@ -14,7 +14,7 @@ class Map extends Component{
     }
 
     zoomChanged(){
-    console.log('Zoom Changed');
+    console.log('Zoom Changed'+ this.state.map.getZoom());
     }
 
     mapLoaded(map){
@@ -46,7 +46,7 @@ class Map extends Component{
     render (){
         const markers = this.props.markers || []
         return(
-            <div>  Map Component 
+            <div>  
             <GoogleMap
               ref={this.mapLoaded.bind(this)}
               onDragEnd={this.mapMoved.bind(this)}
