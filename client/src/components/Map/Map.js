@@ -6,8 +6,9 @@ class Map extends Component{
         super()
             this.state = {
             map:null,
-            latitude :"",
-            longitude: ""
+            lat :"",
+            lng: "",
+            positionState: ""
 
 
         }
@@ -21,11 +22,16 @@ class Map extends Component{
     };
 
     showPosition = position => {
-        this.setState({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-        });
-        console.log(`${this.state.latitude} ${this.state.longitude}`);
+        this.setState( prevState => ({
+            positionState: {
+                ...prevState.positionState,
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            }
+        }))
+        // console.log(`${this.state.lat} ${this.state.lng}`);
+        console.log(this.state.positionState);
+        
     };
 
     mapMoved (){
@@ -70,7 +76,7 @@ class Map extends Component{
               onDragEnd={this.mapMoved.bind(this)}
               onZoomChanged={this.zoomChanged.bind(this)}
               defaultZoom={this.props.zoom}
-              defaultCenter={ this.props.center }>
+              defaultCenter={this.props.center}>
               {markers.map((marker,index) => (
                     <Marker {...marker} />
               ))}
