@@ -7,17 +7,23 @@
       "outletRating": 5,
       "wifiRating" : 5,
       "seatingRating" : 5,
-      "fDRating": 3
+      "fDRating": 3,
+      "lat": 28.600217,
+      "lng": -81.201486,
+      "formattedAddress":"12701 Pegasus Dr, Orlando, FL 32816, USA"
     },
     {
         "id": 2,
-        "locationName": "Vespr",
+        "locationName": "Vespr Cofeebar",
         "noiseRating": 5,
          "image": "https://foodbidden.files.wordpress.com/2013/06/f77925ce-82c9-476b-9d05-d8aaa92f620417.jpg",
         "outletRating": 3,
         "wifiRating" : 4,
         "seatingRating" : 2,
-        "fDRating": 4
+        "fDRating": 4,
+        "lat": 28.555655,
+        "lng": -81.20768389999999,
+        "formattedAddress":"626 N Alafaya Trail #105, Orlando, FL 32828, USA" 
     },
     {
         "id": 3,
@@ -27,7 +33,10 @@
         "outletRating": 2,
         "wifiRating" : 3,
         "seatingRating" : 3,
-        "fDRating": 3
+        "fDRating": 3,
+        "lat": 28.5550702,
+        "lng": -81.1979126,
+        "formattedAddress":"12789 Waterford Lakes Pkwy #1, Orlando, FL 32828, USA" 
     },
     {
         "id": 4,
@@ -37,7 +46,10 @@
         "outletRating": 2,
         "wifiRating" : 3,
         "seatingRating" : 3,
-        "fDRating": 4
+        "fDRating": 4,
+        "lat": 28.59716,
+        "lng": -81.221564,
+        "formattedAddress":"11472 University Blvd, Orlando, FL 32817, USA"
     },
     {
         "id": 5,
@@ -47,18 +59,24 @@
         "outletRating": 2,
         "wifiRating" : 2,
         "seatingRating" : 4,
-        "fDRating": 5
+        "fDRating": 5,
+        "lat": 28.598338,
+        "lng": -81.219712,
+        "formattedAddress":"11551 University Blvd, Orlando, FL 32817, USA"
     },
     
     {
         "id": 6,
-        "locationName": "Lazy Moon Downtown",
+        "locationName": "Lucky's Market",
         "noiseRating": 2,
-         "image": "https://www.scottjosephorlando.com/images/stories/Lazy_Moon_tables.jpg",
-        "outletRating": 2,
-        "wifiRating" : 2,
+         "image": "https://s3-media3.fl.yelpcdn.com/bphoto/p6MoEO0xbjwnuzXLdIZIyA/348s.jpg",
+        "outletRating": 4,
+        "wifiRating" : 3,
         "seatingRating" : 4,
-        "fDRating": 5
+        "fDRating": 5,
+        "lat": 28.5660385,
+        "lng": -81.209717,
+        "formattedAddress":"11750 E Colonial Dr, Orlando, FL 32817, USA"
     },
     {
         "id": 7,
@@ -68,7 +86,10 @@
         "outletRating": 4,
         "wifiRating" : 4,
         "seatingRating" : 3,
-        "fDRating": 4
+        "fDRating": 4,
+        "lat": 28.5537621,
+        "lng": -81.3171626,
+        "formattedAddress":"5310 E Colonial Dr, Orlando, FL 32807, USA"
     },
     {
         "id": 8,
@@ -78,7 +99,10 @@
         "outletRating": 4,
         "wifiRating" : 4,
         "seatingRating" : 3,
-        "fDRating": 5
+        "fDRating": 5,
+        "lat": 28.5533659,
+        "lng": -81.36597050000002,
+        "formattedAddress":"1011 E Colonial Dr, Orlando, FL 32803, USA"
     },
     {
         "id": 9,
@@ -88,7 +112,10 @@
         "outletRating": 3,
         "wifiRating" : 4,
         "seatingRating" : 3,
-        "fDRating": 3
+        "fDRating": 3,
+        "lat": 28.5684649,
+        "lng": -81.34653519999999,
+        "formattedAddress":"1842 Winter Park Rd, Orlando, FL 32803, USA"
         
     },
     {   
@@ -99,6 +126,9 @@
         "outletRating": 4,
         "wifiRating" : 4,
         "seatingRating" : 3,
-        "fDRating": 5
+        "fDRating": 5,
+        "lat": 28.5960664,
+        "lng": -81.28479519999999,
+        "formattedAddress":"7608 University Blvd, Winter Park, FL 32792, USA"
     }
   ]

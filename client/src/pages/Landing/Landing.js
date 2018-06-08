@@ -2,10 +2,9 @@ import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import "./Landing.css";
-import studying from "../../img/studying.jpg";
 import Map from "../../components/Map";
 const Landing = () => (
-      <div>
+     
       
        <Container fluid>
           <Row>
@@ -43,7 +42,7 @@ const Landing = () => (
             </Col>
          </Row>
         </Container>
-        </div>
+       
       );
 
       export default Landing;

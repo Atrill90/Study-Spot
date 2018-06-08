@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
 import "./AddSpot.css";
 import AddSpotForm from "../../components/Users/AddSpotForm"
 import API from "../../utils/API"

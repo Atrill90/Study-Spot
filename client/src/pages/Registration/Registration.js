@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
+import { Container } from "../../components/Grid";
 import RegistrationForm from "../../components/Users/RegistrationForm"
 import API from "../../utils/API"
 

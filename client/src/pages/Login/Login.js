@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
+import { Container } from "../../components/Grid";
 import LoginForm from "../../components/Users/LoginForm"
 
 class Login extends Component {
