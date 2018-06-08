@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const User = mongoose.model('Users');
+const Spots = mongoose.model('Spots');
 const express = require('express');
 const router = express.Router();
 const path = require('path');
@@ -8,7 +8,7 @@ module.exports = {
     create: function(req, res) {
         let errors = [];
 
-        Spot.findOne({ locationName: req.body.locationName}).then((spot)=>{
+        Spots.findOne({ locationName: req.body.locationName}).then((spot)=>{
             if(spot) {
                 errors.push({
                     text: "This spot already exists, please enter a new spot"
@@ -25,6 +25,14 @@ module.exports = {
         })
 
 
+    },
+   
+        read: function(req, res) {
+            db.Spots
+              .find({})
+              .sort({ locationName: 1 })
+              .then(dbModel => res.json(dbModel))
+              .catch(err => res.status(422).json(err));
     }
 
 
