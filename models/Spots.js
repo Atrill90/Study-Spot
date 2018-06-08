@@ -2,15 +2,18 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const spotSchema = new Schema({
+    id: { type: Number, required: true},
     locationName: { type: String, required: true },
     noiseRating: { type: Number, required: true },
+    image: { type: String, required: false},
     outletRating: { type: Number, required: true },
     wifiRating: { type: Number, required: true },
     seatingRating: { type: Number, required: true },
     fDRating: { type: Number, required: true },
-    image: { type: String, required: false},
-    address: { type: String, required: false},
-    latlng:{type:String, required: false},
+    lat: { type: Number, required: false },
+    lng: { type: Number, required: false },
+    formattedAddress: { type: String, required: false},
+    
     date: { type: Date, default: Date.now }
   });
   
