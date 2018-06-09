@@ -5,15 +5,17 @@ const expressSession = require('express-sessions');
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const app = express();
 
 
 //Load Models
 require("./models/Users");
+require("./models/Spots");
 
 
 //Load Routes
-const auth = require("./routes/auth");
-const newSpot = require ("./routes/newSpot");
+// const auth = require("./routes/auth");
+// const newSpot = require ("./routes/newSpot");
 
 
 
@@ -21,7 +23,7 @@ const newSpot = require ("./routes/newSpot");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/StudySpot");
 
 
-const app = express();
+
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -41,10 +43,10 @@ if (process.env.NODE_ENV === "production") {
 
 
 //Use Routes
-app.use("/auth",auth);
-app.use("/newSpot",newSpot);
+// app.use("/auth",auth);
+// app.use("/api",newSpot);
 
-
+app.use(require('./routes'));
 
 
 

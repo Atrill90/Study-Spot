@@ -13,7 +13,6 @@ const spotSchema = new Schema({
     lat: { type: Number, required: false },
     lng: { type: Number, required: false },
     formattedAddress: { type: String, required: false},
-    
     date: { type: Date, default: Date.now }
   });
   

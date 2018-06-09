@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
+
 module.exports = {
     create: function(req, res) {
         let errors = [];
@@ -28,10 +29,10 @@ module.exports = {
     },
    
         read: function(req, res) {
-            db.Spots
+            Spots
               .find({})
               .sort({ locationName: 1 })
-              .then(dbModel => res.json(dbModel))
+              .then(spots => res.json(spots))
               .catch(err => res.status(422).json(err));
     }
 

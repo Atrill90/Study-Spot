@@ -18,8 +18,11 @@ export default {
     return axios.post("/api/spots", spotData);
     console.log("we did it");
    },
-   getSpot: function (spotInfo) {
-     return axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.602,-81.200&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyBw0BYH9kzgKn12oW7Kqh46e0tpJ9EYg_U")
+   findAllSpots: function () {
+     return axios.get("/api/spots")
    }
+  //  getSpot: function (spotInfo) {
+  //    return axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.602,-81.200&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyBw0BYH9kzgKn12oW7Kqh46e0tpJ9EYg_U")
+  //  }
    
 };

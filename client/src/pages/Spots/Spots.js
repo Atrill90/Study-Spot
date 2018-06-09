@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
-
+import API from "../../utils/API";
+import "./Spots.css";
+import SpotCard from "../../components/SpotCard";
 
 class Spots extends Component {
     constructor (props) {
@@ -10,6 +12,16 @@ class Spots extends Component {
             query: ""
         };
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentDidMount() {
+        API.findAllSpots()
+        .then(res => {
+            console.log(res);
+            this.setState({
+                spots:res.data
+            })
+        })
     }
 
     handleChange = event => {
@@ -33,15 +45,26 @@ class Spots extends Component {
             <Row>
                 <Col size= "md-4" > </Col>    
                 <Col size= "md-4" >
-                    <h1> Search goes here </h1>
-                    <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search a Spot"        aria-label="Recipient's username"     aria-describedby="basic-addon2"/>
-                    </div>
-                    <button type="button" class="btn btn-secondary">Submit</button>     
+                    <h1> Find your spot </h1>
                </Col>  
             </Row>
             <br/>
             <Row>
+                {this.state.spots.map(spot =>{
+                    return <SpotCard
+                        id ={ spot.id}
+                        formattedAddress = {spot.formattedAddress}
+                        locationName ={spot.locationName}
+                        image = {spot.image}
+                        outletRating = {spot.outletRating}
+                        noiseRating = {spot.noiseRating}
+                        wifiRating= {spot.wifiRating}
+                        fDRating ={spot.fDRating}
+                        seatingRating = {spot.seatingRating}
+                        lat = {spot.lat}
+                        lng = {spot.lng}
+                        />
+                })}
             </Row>        
         </Container>
         )
@@ -49,3 +72,14 @@ class Spots extends Component {
 }
 
 export default Spots;
+
+
+{/* <div className="card">
+                                    <img className="card-img-top spotPic" src={spot.image} alt="Card image cap"/>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{spot.locationName}</h5>
+                                        <p className="card-text">Wifi Rating {spot.wifiRating}</p>
+                                        <a href="#" className="btn btn-primary">Give me the deets!</a>
+                                    </div>
+                                </div>
+                            </div> */}

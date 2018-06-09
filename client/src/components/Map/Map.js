@@ -51,6 +51,13 @@ class Map extends Component{
             map:map
         })
     }
+    // mapMarker(coords,){
+    //     let marker = new google.maps.Marker({
+    //         position:coords,
+    //         map:map,
+
+    //     })
+    // }
 
 
     componentDidMount(){
