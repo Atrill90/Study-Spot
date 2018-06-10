@@ -1,14 +1,15 @@
 import React,{ Component } from 'react'
-import {withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
+import {withGoogleMap, GoogleMap, Marker,} from 'react-google-maps'
 class Map extends Component{
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
             this.state = {
             map:null,
             lat :"",
             lng: "",
-            positionState: ""
+            positionState: "", 
+            marker:[]
 
 
         }
@@ -62,6 +63,21 @@ class Map extends Component{
 
     componentDidMount(){
         this.getLocation();
+        // let spotLat = this.props.lat
+        // let spotLng = this.props.lng
+
+        // const markers = [{
+        //     location:{
+        //         lat:spotLat,
+        //         lng:spotLng
+        //     }
+        // }]
+        // this.marker = new google.maps.Marker({
+        //     map: this.map,
+        //     position: {
+        //      markers
+        //     }      
+        //  })
     }
 
 //     getLocation = callback =>{

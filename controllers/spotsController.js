@@ -8,7 +8,7 @@ const path = require('path');
 module.exports = {
     create: function(req, res) {
         let errors = [];
-
+        console.log(req.body.locationName);
         Spots.findOne({ locationName: req.body.locationName}).then((spot)=>{
             if(spot) {
                 errors.push({
@@ -19,8 +19,11 @@ module.exports = {
                 });
 
             } else {
+                // location grabbing goes here
+                // console.log(res);
+
                 Spot.create(newSpot).then(function (spot){
-                    res.redirect('http://localhost:3001/Spots')
+                    res.redirect('newSpot/api/spots')
                 })
             }
         })

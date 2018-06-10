@@ -21,34 +21,31 @@ class AddSpot extends Component {
 
 
 handleChange = event => {
-    console.log(event.target.value);
-    console.log(event.target.name)
+    // console.log(event.target.value);
+    // console.log(event.target.name)
     this.setState({[event.target.name]: [event.target.value]});
     // console.log(this.state.edate);
 }
 
 formSubmission = event => {
     event.preventDefault();
-    console.log("hello there");
+    
     this.setState({[event.target.name]: [event.target.value]});
-    console.log(this.state.locationName, this.state.noiseRating, this.state.outletRating, this.state.wifiRating, this.state.seatingRating);
+    // console.log(this.state.locationName, this.state.noiseRating, this.state.outletRating, this.state.wifiRating, this.state.seatingRating);
     this.spotCreate();
 }
 
 spotCreate = () => {
     console.log("new spot data goes here!");
-    let spot ={
+    API.saveSpot({        
         locationName: this.state.locationName,
         noiseRating: this.state.noiseRating,
         outletRating: this.state.outletRating,
         wifiRating: this.state.wifiRating,
         seatingRating: this.state.seatingRating
-    }
-    
-    console.log(spot);
-    API.saveSpot(spot).then(res =>{
-        console.log(res);
-        console.log(`Spot saved successfully`);
+    }).then(res =>{
+        console.log(res + `Spot saved successfully`);
+   
     }
         
     ).catch(err =>{

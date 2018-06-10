@@ -26,6 +26,7 @@ const SpotCard = ({id, locationName, image, formattedAddress, outletRating, nois
                         mapElement = {<div style ={{height:100+'%'}}/>}
                         center = {{lat: lat, lng: lng }}
                         zoom ={15}
+                        lat = {lat}
                         />
                     </div>
                 </div>
