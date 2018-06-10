@@ -44,7 +44,7 @@ spotCreate = () => {
         wifiRating: this.state.wifiRating,
         seatingRating: this.state.seatingRating
     }).then(res =>{
-        console.log(res + `Spot saved successfully`);
+        console.log(res);
    
     }
         
