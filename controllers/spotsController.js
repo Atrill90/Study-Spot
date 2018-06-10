@@ -8,7 +8,7 @@ const axios = require('axios');
 module.exports = {
     create: function(req, res) {
         let errors = [];
-        console.log(req.body.locationName);
+        // console.log(req.body.locationName);
         Spots.findOne({ locationName: req.body.locationName}).then((spot)=>{
             if(spot) {
                 errors.push({
@@ -20,27 +20,50 @@ module.exports = {
 
             } else {
                 // location grabbing goes here
-                let query = req.body.locationName;
-                
+                let query = encodeURIComponent(req.body.locationName);
+                console.log(query);
                 function googleSearch(query) {
                     axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${query}&location=28.602,-81.200&radius=15&unit=miles&key=AIzaSyBw0BYH9kzgKn12oW7Kqh46e0tpJ9EYg_U`)
                     .then(response => {
                         res.sendStatus(200);
+                        
                          let searchResult =response.data.results[0];
-                         let address = searchResult.formattedaddress;
+                        //  console.log(searchResult);
+                         let address = searchResult.formatted_address;
                          let lat = searchResult.geometry.location.lat;
-                         console.log(searchResult);
+                         let lng = searchResult.geometry.location.lng;
+                         let googleRating = searchResult.rating;
+                         let photo = searchResult.photos.photo_reference; 
+                         let realName = searchResult.name;
 
+                         let newSpot = {
+                            locationName: realName,
+                            noiseRating : req.body.noiseRating[0],
+                            image : photo,
+                            outletRating : req.body.outletRating[0],
+                            wifiRating : req.body.wifiRating[0],
+                            seatingRating : req.body.seatingRating[0],
+                            fDRating : req.body.fDRating[0],
+                            lat : lat, 
+                            lng : lng,
+                            formattedaddress : address,
+                            googleRating : googleRating,
+                        }
+
+                        console.log(newSpot);
+                        Spots.create(newSpot).then(function (spot) {
+                            res.send('newSpot/api/spots')
+                        })
                     })
+                    
+                   
                 }
 
                 googleSearch(query); 
                
-/*
-                Spot.create(newSpot).then(function (spot) {
-                    res.redirect('newSpot/api/spots')
-                })
-            */
+
+               
+            
             }
         })
 

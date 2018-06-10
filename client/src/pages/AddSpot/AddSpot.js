@@ -42,10 +42,20 @@ spotCreate = () => {
         noiseRating: this.state.noiseRating,
         outletRating: this.state.outletRating,
         wifiRating: this.state.wifiRating,
-        seatingRating: this.state.seatingRating
+        seatingRating: this.state.seatingRating,
+        fDRating: this.state.fDRating
     }).then(res =>{
         console.log(res);
-   
+        this.setState ({
+            locationName: "",
+            noiseRating: 0,
+            outletRating: 0,
+            wifiRating: 0,
+            seatingRating: 0,
+            fDRating:0
+          });
+          document.getElementById("locationName").value = "";
+          document.getElementsByName("noiseRating").checked = false;
     }
         
     ).catch(err =>{
