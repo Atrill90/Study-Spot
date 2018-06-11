@@ -8,11 +8,11 @@ const bodyParser = require("body-parser");
 const app = express();
 require("dotenv").config();
 
-//Load Models
-require("./models/Users");
-require("./models/Spots");
-
-
+// Load Models
+// require("./models/Users");
+// require("./models/Spots");
+// app.use(require('./models'));
+const db = require("./models");
 //Load Routes
 // const auth = require("./routes/auth");
 // const newSpot = require ("./routes/newSpot");
