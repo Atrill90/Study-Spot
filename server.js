@@ -12,7 +12,7 @@ require("dotenv").config();
 // require("./models/Users");
 // require("./models/Spots");
 
-require("./models");
+const db = require("./models");
 
 
 
