@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import "./AddSpot.css";
-import AddSpotForm from "../../components/Users/AddSpotForm"
+import AddSpotForm from "../../components/AddSpotForm"
 import API from "../../utils/API"
 
 class AddSpot extends Component {
