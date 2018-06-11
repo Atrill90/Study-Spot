@@ -53,6 +53,7 @@ class Spots extends Component {
                 {this.state.spots.map(spot =>{
                     return <SpotCard
                         id ={ spot.id}
+                        _id = {spot._id}
                         formattedAddress = {spot.formattedAddress}
                         locationName ={spot.locationName}
                         image = {spot.image}
@@ -66,7 +67,7 @@ class Spots extends Component {
                         yelpRating = {spot.yelpRating}
                         overallRating = {spot.overallRating}
                         phone = {spot.phone}
-                        
+
                         />
                 })}
             </Row>        
