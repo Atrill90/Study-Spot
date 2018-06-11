@@ -23,14 +23,14 @@ class AddSpot extends Component {
 handleChange = event => {
     // console.log(event.target.value);
     // console.log(event.target.name)
-    this.setState({[event.target.name]: [event.target.value]});
+    this.setState({[event.target.name]: event.target.value});
     // console.log(this.state.edate);
 }
 
 formSubmission = event => {
     event.preventDefault();
     
-    this.setState({[event.target.name]: [event.target.value]});
+    this.setState({[event.target.name]: event.target.value});
     // console.log(this.state.locationName, this.state.noiseRating, this.state.outletRating, this.state.wifiRating, this.state.seatingRating);
     this.spotCreate();
 }
@@ -45,17 +45,14 @@ spotCreate = () => {
         seatingRating: this.state.seatingRating,
         fDRating: this.state.fDRating
     }).then(res =>{
-        console.log(res);
-        this.setState ({
-            locationName: "",
-            noiseRating: 0,
-            outletRating: 0,
-            wifiRating: 0,
-            seatingRating: 0,
-            fDRating:0
-          });
-          document.getElementById("locationName").value = "";
-          document.getElementsByClassName("radioButton").checked = false;
+       if(res.data.errors){
+        document.getElementById("locationName").value = "";
+        document.getElementsByClassName("radioButton").value = 0;
+        alert("This spot exists already, please try again")
+       }else {
+        alert("successful addition")
+         
+       }
     }
         
     ).catch(err =>{

@@ -9,61 +9,82 @@ require("dotenv").config();
 module.exports = {
     create: function(req, res) {
         let errors = [];
-        // console.log(req.body.locationName);
-        Spots.findOne(
-            { locationName: req.body.locationName})
-            .then((spot)=>{
-            if(spot) {
-                errors.push({
-                    text: "This spot already exists, please enter a new spot"
-                });
-                res.redirect('http://locathost:3001/addSpot',{
-                    errors: errors,
-                });
-
-            } else {
-                // location grabbing goes here
-               let token = process.env.YELP_API_KEY;
+        let token = process.env.YELP_API_KEY;
               
-                let query = encodeURIComponent(req.body.locationName);
-                // console.log(query);
-                
-                    axios.get(`https://api.yelp.com/v3/businesses/search?latitude=28.602&longitude=-81.200&term=${query}`,{ 
-                        headers: {
-                            Authorization: `Bearer ${token}`
+        let query = encodeURIComponent(req.body.locationName);
+        // console.log(query);
+        
+            axios.get(`https://api.yelp.com/v3/businesses/search?latitude=28.602&longitude=-81.200&term=${query}`,{ 
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            .then(response => {
+                let searchResult = response.data.businesses[0];
+                let realName = searchResult.name.replace(/\\"/g, '"');
+                // console.log(req.body.locationName);
+                Spots.findOne(
+                    { locationName: realName})
+                    .then((spot)=>{
+                        if(spot) {
+                            errors.push({
+                                text: "This spot already exists, please enter a new spot"
+                            });
+                            res.send({
+                                errors: errors,
+                            });
                         }
-                    })
-                    .then(response => {
-                        console.log(response.data.businesses[0]);
-                        let searchResult = response.data.businesses[0];
-                        let realName = searchResult.name.replace(/\\"/g, '"');
+                    
+                        else {
+                // location grabbing goes here
+              
+                        // console.log(response.data.businesses[0]);
+                        
                         let photo = searchResult.image_url;
                         let businessID = searchResult.id;
-                        
-                         
+                        let businessAddress = searchResult.location.display_address[0];
+                        let phone = searchResult.display_phone;
+                        let lat = searchResult.coordinates.latitude;
+                        let lng = searchResult.coordinates.longitude;
+                        let yelpRating = searchResult.rating;
+                        let addedRatings = parseInt(req.body.noiseRating) + parseInt(req.body.outletRating) + parseInt(req.body.wifiRating) + parseInt(req.body.seatingRating) + parseInt(req.body.fDRating) + parseInt(yelpRating);
+                        let overallRating = (addedRatings / 6).toFixed(2);
+                        console.log(addedRatings);
 
-                        //  let newSpot = {
-                        //     locationName: realName,
-                        //     noiseRating : req.body.noiseRating[0],
-                        //     image : photo,
-                        //     outletRating : req.body.outletRating[0],
-                        //     wifiRating : req.body.wifiRating[0],
-                        //     seatingRating : req.body.seatingRating[0],
-                        //     fDRating : req.body.fDRating[0],
-                        //     lat : lat, 
-                        //     lng : lng,
-                        //     formattedAddress : address,
-                        //     googleRating : googleRating,
-                        // }
-
-                        // console.log(newSpot);
-                        // Spots.create(newSpot).then(function (spot) {
-                        //     res.sendStatus(200)
+                        // axios.get(`https://api.yelp.com/v3/businesses/${businessID}`,{ 
+                        //     headers: {
+                        //         Authorization: `Bearer ${token}`
+                        //     }
                         // })
+                        // .then(businessResponse => {
+                        //     console.log(businessResponse.data.hours[0]);
+                        // })
+
+                         let newSpot = {
+                            locationName: realName,
+                            noiseRating : req.body.noiseRating,
+                            image : photo,
+                            outletRating : req.body.outletRating,
+                            wifiRating : req.body.wifiRating,
+                            seatingRating : req.body.seatingRating,
+                            fDRating : req.body.fDRating,
+                            lat : lat, 
+                            lng : lng,
+                            formattedAddress : businessAddress,
+                            yelpRating : yelpRating,
+                            overallRating : overallRating,
+                            phone : phone
+
+                        }
+
+                        console.log(newSpot);
+                        Spots.create(newSpot).then(function (spot) {
+                            res.sendStatus(200)
+                        })
                    
                     
-                   
-                        })
+                    }
+                })
 
               
                
@@ -72,7 +93,7 @@ module.exports = {
                
             
                 
-            }   
+             
 
 
         })

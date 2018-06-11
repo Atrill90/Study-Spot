@@ -13,7 +13,9 @@ const spotSchema = new Schema({
     lat: { type: Number, required: false },
     lng: { type: Number, required: false },
     formattedAddress: { type: String, required: false},
-    googleRating: { type: Number, required: false },
+    yelpRating: { type: Number, required: false },
+    overallRating:  { type: String, required: false },
+    phone:  { type: String, required: false },
     date: { type: Date, default: Date.now }
   });
   
