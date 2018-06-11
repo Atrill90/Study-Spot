@@ -19,4 +19,5 @@ const spotSchema = new Schema({
     date: { type: Date, default: Date.now }
   });
   
-   mongoose.model("Spots", spotSchema);
+   let Spots = mongoose.model("Spots", spotSchema);
+   module.exports = Spots;
