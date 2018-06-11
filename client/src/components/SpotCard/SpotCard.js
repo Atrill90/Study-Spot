@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import "./SpotCard.css";
 import Map from "../Map/";
 
-const SpotCard = ({id, locationName, image, formattedAddress, outletRating, noiseRating,wifiRating, fDRating, seatingRating, lat, lng}) => (
+const SpotCard = ({id, locationName, image, formattedAddress, outletRating, noiseRating,wifiRating, fDRating, seatingRating, lat, lng, yelpRating, overallRating, phone}) => (
         <div className="col-12" key = {id}>  
         <div className="card rounded-0">
             <div className="card-body" id={locationName}>
@@ -13,12 +13,15 @@ const SpotCard = ({id, locationName, image, formattedAddress, outletRating, nois
                     <div className="col-5 pl-0">
                         <p className="spot-address">Address: {formattedAddress}</p>
                         <p className="spot-name">Study Spot: {locationName}</p>
+                        <p className="spot-phone">Phone: {phone}</p>
                         <p className="spot-details">Let's check the ratings!</p>
                         <p className="outlet-rating">Outlet Rating: {outletRating}</p>
                         <p className="noise-rating">Noise Rating: {noiseRating}</p>
                         <p className="wifi-rating">Wifi Rating: {wifiRating}</p>
                         <p className="fd-rating">Food and Drink Rating: {fDRating}</p>
                         <p className="seating-rating">Seating Rating: {seatingRating}</p>
+                        <p className="yelp-rating">Yelp Rating: {yelpRating}</p>
+                        <p className="overall-rating">Overall Rating: {overallRating}</p>
                     </div>
                     <div className="col-3 pl-0">
                         <Map
@@ -27,6 +30,7 @@ const SpotCard = ({id, locationName, image, formattedAddress, outletRating, nois
                         center = {{lat: lat, lng: lng }}
                         zoom ={15}
                         lat = {lat}
+                        // markers = {}
                         />
                     </div>
                 </div>

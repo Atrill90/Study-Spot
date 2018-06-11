@@ -63,6 +63,10 @@ class Spots extends Component {
                         seatingRating = {spot.seatingRating}
                         lat = {spot.lat}
                         lng = {spot.lng}
+                        yelpRating = {spot.yelpRating}
+                        overallRating = {spot.overallRating}
+                        phone = {spot.phone}
+                        
                         />
                 })}
             </Row>        
