@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const app = express();
-
+require("dotenv").config();
 
 //Load Models
 require("./models/Users");
