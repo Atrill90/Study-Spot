@@ -48,7 +48,7 @@ module.exports = {
                         let lng = searchResult.coordinates.longitude;
                         let yelpRating = searchResult.rating;
                         let addedRatings = parseInt(req.body.noiseRating) + parseInt(req.body.outletRating) + parseInt(req.body.wifiRating) + parseInt(req.body.seatingRating) + parseInt(req.body.fDRating) + parseInt(yelpRating);
-                        let overallRating = (addedRatings / 6).toFixed(2);
+                        let overallRating = parseInt((addedRatings / 6).toFixed(2));
                         console.log(addedRatings);
 
                         // axios.get(`https://api.yelp.com/v3/businesses/${businessID}`,{ 
@@ -102,7 +102,7 @@ module.exports = {
     read: function(req, res) {
         Spots
         .find({})
-        .sort({ locationName: 1 })
+        .sort({ overallRating: 1 })
         .then(spots => res.json(spots))
         .catch(err => res.status(422).json(err));
     }

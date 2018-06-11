@@ -14,7 +14,7 @@ const spotSchema = new Schema({
     lng: { type: Number, required: false },
     formattedAddress: { type: String, required: false},
     yelpRating: { type: Number, required: false },
-    overallRating:  { type: String, required: false },
+    overallRating:  { type: Number, required: false },
     phone:  { type: String, required: false },
     date: { type: Date, default: Date.now }
   });

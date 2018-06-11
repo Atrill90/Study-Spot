@@ -46,7 +46,7 @@ class SpotCard extends Component {
                                     <p className="spot-phone">Phone: {this.props.phone}</p>
                                     <p className="overall-rating">Study Spot Rating: {this.props.overallRating}</p>
                                     <a data-toggle="collapse" href={`#${this.props._id}`} role="button" aria-expanded="false" aria-controls={this.props._id}>
-                                    See More
+                                    Rating Breakdown
                                     </a>
                                     <div className="collapse" id={this.props._id}>
                                         <p className="outlet-rating">Outlet Rating: {this.props.outletRating}</p>
