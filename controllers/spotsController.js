@@ -25,7 +25,7 @@ module.exports = {
                 function googleSearch(query) {
                     axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${query}&location=28.602,-81.200&radius=15&unit=miles&key=AIzaSyBw0BYH9kzgKn12oW7Kqh46e0tpJ9EYg_U`)
                     .then(response => {
-                        res.sendStatus(200);
+                        
                         
                          let searchResult =response.data.results[0];
                         //  console.log(searchResult);
@@ -33,7 +33,7 @@ module.exports = {
                          let lat = searchResult.geometry.location.lat;
                          let lng = searchResult.geometry.location.lng;
                          let googleRating = searchResult.rating;
-                         let photo = searchResult.photos.photo_reference; 
+                         let photo = searchResult.photos[0].photo_reference; 
                          let realName = searchResult.name;
 
                          let newSpot = {
@@ -46,13 +46,13 @@ module.exports = {
                             fDRating : req.body.fDRating[0],
                             lat : lat, 
                             lng : lng,
-                            formattedaddress : address,
+                            formattedAddress : address,
                             googleRating : googleRating,
                         }
 
                         console.log(newSpot);
                         Spots.create(newSpot).then(function (spot) {
-                            res.send('newSpot/api/spots')
+                            res.sendStatus(200)
                         })
                     })
                     

@@ -55,7 +55,7 @@ spotCreate = () => {
             fDRating:0
           });
           document.getElementById("locationName").value = "";
-          document.getElementsByName("noiseRating").checked = false;
+          document.getElementsByClassName("radioButton").checked = false;
     }
         
     ).catch(err =>{
