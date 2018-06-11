@@ -85,24 +85,12 @@ module.exports = {
                     
                     }
                 })
-
-              
-               
-               
-
-               
-            
-                
-             
-
-
         })
     },
-   
     read: function(req, res) {
         Spots
         .find({})
-        .sort({ overallRating: 1 })
+        .sort({ overallRating: -1 })
         .then(spots => res.json(spots))
         .catch(err => res.status(422).json(err));
     }

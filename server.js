@@ -18,7 +18,7 @@ require("./models/Spots");
 // const newSpot = require ("./routes/newSpot");
 
 
-
+mongoose.Promise = global.Promise;
 //MongoConnect
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/StudySpot");
 

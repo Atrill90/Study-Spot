@@ -22,7 +22,7 @@ const Landing = () => (
                 <h1>Study Spot</h1>
                 <h3>
                   <span role="img" aria-label="World Emoji">
-                    🌎Find your spot to get shit done🌎
+                    🌎Find a great spot to study🌎
                   </span>
                 </h3>
               </Jumbotron>

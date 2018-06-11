@@ -54,6 +54,7 @@ class Spots extends Component {
                     return <SpotCard
                         id ={ spot.id}
                         _id = {spot._id}
+                        key = {spot._id}
                         formattedAddress = {spot.formattedAddress}
                         locationName ={spot.locationName}
                         image = {spot.image}
@@ -66,9 +67,7 @@ class Spots extends Component {
                         lng = {spot.lng}
                         yelpRating = {spot.yelpRating}
                         overallRating = {spot.overallRating}
-                        phone = {spot.phone}
-
-                        />
+                        phone = {spot.phone}/>
                 })}
             </Row>        
         </Container>
