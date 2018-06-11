@@ -12,10 +12,8 @@ require("dotenv").config();
 // require("./models/Users");
 // require("./models/Spots");
 
-const db = require("./models");
-//Load Routes
-// const auth = require("./routes/auth");
-// const newSpot = require ("./routes/newSpot");
+require("./models");
+
 
 
 mongoose.Promise = global.Promise;
