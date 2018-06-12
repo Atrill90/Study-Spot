@@ -18,7 +18,9 @@ const db = require("./models");
 
 mongoose.Promise = global.Promise;
 //MongoConnect
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/StudySpot");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/StudySpot")
+.then(()=> console.log('MongoDB Connected'))
+.catch(err => console.log(err));
 
 
 

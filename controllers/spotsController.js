@@ -22,7 +22,7 @@ module.exports = {
             .then(response => {
                 let searchResult = response.data.businesses[0];
                 let realName = searchResult.name.replace(/\\"/g, '"');
-                // console.log(req.body.locationName);
+                console.log(req.body.locationName);
                 Spots.findOne(
                     { locationName: realName})
                     .then((spot)=>{
