@@ -85,6 +85,8 @@ module.exports = {
                     
                     }
                 })
+        }).catch(error => {
+            console.log(error);
         })
     },
     read: function(req, res) {
