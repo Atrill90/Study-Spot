@@ -1,18 +1,30 @@
-h1,h3{
-    font-family: cursive;
+h1{
+    font-family: 'Acme', sans-serif;;
 }
+
+h2{
+    font-family: 'Acme', sans-serif;;
+}
+
+h3{
+    font-family: 'Roboto', sans-serif;
+}
+
+#webTitle{
+    font-family: 'Acme', sans-serif;
+    font-size: 100px;
+}
+
 .jumbotron{
-    background-color:lightblue;
+    background-color:gold;
 }
+
 #studyPic{
     background-image: url("../../img/studying.jpg");
     height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
-h2{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #map-col, #jumbo-col {

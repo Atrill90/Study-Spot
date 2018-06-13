@@ -10,7 +10,10 @@ class SpotCard extends Component {
         this.state = {
             markers: [],
             lat: 0,
-            lng: 0
+            lng: 0,
+            starsTotal: 5,
+            overallRatingStars: 0,
+            theRealFirstWord: ""
         }
     }
 
@@ -20,16 +23,27 @@ class SpotCard extends Component {
         let latLng = {lat: lat, lng: lng}
         let markerId = this.props._id; //probably works>?
         let markerPosition = latLng; //hope this works
-
+        
         let markers = [
             {
                 id: markerId,
                 position: markerPosition
             }
         ]
+        let str = this.props.locationName;
+        let firstWord = str.split(' ')[0]
+        let theRealFirstWord = firstWord.replace(/'/g, '')
+        console.log(theRealFirstWord);
+        let starPercentage = (this.props.overallRating / this.state.starsTotal) * 100;
+        let starPercentageRounded = `${Math.round(starPercentage / 10) *10}%`;
+        console.log(starPercentageRounded);
+    
+        this.setState({lat: lat, lng: lng, markers: markers,overallRatingStars: starPercentageRounded,theRealFirstWord:theRealFirstWord})
 
-        this.setState({lat: lat, lng: lng, markers: markers})
+        // document.querySelector(`.${theRealFirstWord}.starsinner`).style.width = starPercentageRounded;
     }
+        
+
 
     render() {
         return(
@@ -40,12 +54,17 @@ class SpotCard extends Component {
                                 <div className="col-4">
                                     <img src={this.props.image} className="spot-img spotPic" alt={this.props.locationName}/>
                                 </div>
-                                <div className="col-5 pl-0">
+                                <div className= "col-5 pl-0">
                                     <p className="spot-address">Address: {this.props.formattedAddress}</p>
                                     <p className="spot-name">Study Spot: {this.props.locationName}</p>
                                     <p className="spot-phone">Phone: {this.props.phone}</p>
-                                    <p className="overall-rating">Study Spot Rating: {this.props.overallRating}</p>
-                                    <a data-toggle="collapse" href={`#${this.props._id}`} role="button" aria-expanded="false" aria-controls={this.props._id}>
+                                    <p className="overall-rating">Study Spot Rating: {this.props.overallRating}</p>  
+                                    <div className = "stars-outer">
+                                        <div className = {`${this.state.theRealFirstWord} starsinner`}></div>
+                                    </div>
+                                    <br/>    
+                                    <br/>                                
+                                     <a data-toggle="collapse" href={`#${this.props._id}`} role="button" aria-expanded="false" aria-controls={this.props._id}>
                                     Rating Breakdown
                                     </a>
                                     <div className="collapse" id={this.props._id}>
