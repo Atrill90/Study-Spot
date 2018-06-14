@@ -33,16 +33,16 @@ class Map extends Component{
             }
         }))
         // console.log(`${this.state.lat} ${this.state.lng}`);
-        console.log(this.state.positionState);
+        // console.log(this.state.positionState);
         
     };
 
     mapMoved (){
-        console.log('Map Moved' +JSON.stringify(this.state.map.getCenter()));
+        // console.log('Map Moved' +JSON.stringify(this.state.map.getCenter()));
     }
 
     zoomChanged(){
-        console.log('Zoom Changed'+ this.state.map.getZoom());
+        // console.log('Zoom Changed'+ this.state.map.getZoom());
     }
 
     mapLoaded(map){

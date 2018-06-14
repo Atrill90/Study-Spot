@@ -34,10 +34,6 @@ class Landing extends Component {
        window.location.href ="/spots"
      }
 
-
-
-
-
   render(){
       return(
        <Container fluid>

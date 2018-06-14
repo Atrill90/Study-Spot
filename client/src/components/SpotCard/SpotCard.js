@@ -13,7 +13,8 @@ class SpotCard extends Component {
             lng: 0,
             starsTotal: 5,
             overallRatingStars: 0,
-            theRealFirstWord: ""
+            theRealFirstWord: "",
+            starPercentageRounded:0
         }
     }
 
@@ -34,12 +35,10 @@ class SpotCard extends Component {
         let firstWord = str.split(' ')[0]
         let theRealFirstWord = firstWord.replace(/'/g, '')
         let starPercentage = (this.props.overallRating / this.state.starsTotal) * 100;
-        let starPercentageRounded = `${Math.round(starPercentage / 10) *10}%`;
+        let starPercentageRounded = Math.round(starPercentage / 10) *10;
     
-        this.setState({lat: lat, lng: lng, markers: markers,overallRatingStars: starPercentageRounded,theRealFirstWord:theRealFirstWord})
-
-        // document.getElementById(theRealFirstWord).style.width = starPercentageRounded;
-    }
+        this.setState({lat: lat, lng: lng, markers: markers,overallRatingStars: starPercentageRounded,theRealFirstWord:theRealFirstWord,starPercentageRounded:starPercentageRounded})
+        }
         
 
     onMarkerClick(){
@@ -60,16 +59,11 @@ class SpotCard extends Component {
                                     <p className="spot-name"> <h4>{this.props.locationName} </h4></p>
                                     <p className="overall-rating"><strong>Study Spot Rating: {this.props.overallRating} </strong></p>  
                                     <div className = "stars-outer">
-                                        <div className = "starsinner" id={this.state.theRealFirstWord}></div>
+                                        <div style = {{"width" :`${this.state.starPercentageRounded}%`}} className = "starsinner"  ></div>
                                     </div>
                                     <br/>
                                     <p className="spot-phone"> {this.props.phone}</p>
-                                    
-                                    <p className="spot-address"> {this.props.formattedAddress}</p>
-                                    <br/>
-                                   
-                                    <br/>    
-                                    <br/>                                
+                                    <p className="spot-address"> {this.props.formattedAddress}</p>                              
                                      <a data-toggle="collapse" href={`#${this.props._id}`} role="button" aria-expanded="false" aria-controls={this.props._id}>
                                     Rating Breakdown
                                     </a>
