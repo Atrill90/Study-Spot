@@ -45,10 +45,10 @@ class Landing extends Component {
             <Col size="md-12" id="jumbo-col">
               <Jumbotron>
                 <h1 id ="webTitle">Study Spot</h1>
-                <h3><i class="fas fa-book"></i>
+                <h3><i class="fas fa-book mr-3"></i>
 
                 Find a great spot to study 
-                <i class="fas fa-book"></i>
+                <i class="fas fa-book ml-3"></i>
                 </h3>
               </Jumbotron>
             </Col>
@@ -56,7 +56,10 @@ class Landing extends Component {
           <Row>
             <Col size= "md-12" id ="studyPic-col">
               <div id ="studyPic">
-                
+              <div className ="text-center message">
+                <h2> Sick of stuyding at home?</h2>
+                <h5> Click on the markers below to explore study spots near UCF </h5>
+              </div>  
               </div>
            </Col>
          </Row>

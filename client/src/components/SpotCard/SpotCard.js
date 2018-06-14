@@ -38,7 +38,7 @@ class SpotCard extends Component {
     
         this.setState({lat: lat, lng: lng, markers: markers,overallRatingStars: starPercentageRounded,theRealFirstWord:theRealFirstWord})
 
-        // document.querySelector(`.${theRealFirstWord}.starsinner`).style.width = starPercentageRounded;
+        // document.getElementById(theRealFirstWord).style.width = starPercentageRounded;
     }
         
 
@@ -57,13 +57,17 @@ class SpotCard extends Component {
                                     <img src={this.props.image} className="spot-img spotPic" alt={this.props.locationName}/>
                                 </div>
                                 <div className= "col-5 pl-0">
-                                    <p className="spot-address">Address: {this.props.formattedAddress}</p>
-                                    <p className="spot-name">Study Spot: {this.props.locationName}</p>
-                                    <p className="spot-phone">Phone: {this.props.phone}</p>
-                                    <p className="overall-rating">Study Spot Rating: {this.props.overallRating}</p>  
+                                    <p className="spot-name"> <h4>{this.props.locationName} </h4></p>
+                                    <p className="overall-rating"><strong>Study Spot Rating: {this.props.overallRating} </strong></p>  
                                     <div className = "stars-outer">
-                                        <div className = {`${this.state.theRealFirstWord} starsinner`}></div>
+                                        <div className = "starsinner" id={this.state.theRealFirstWord}></div>
                                     </div>
+                                    <br/>
+                                    <p className="spot-phone"> {this.props.phone}</p>
+                                    
+                                    <p className="spot-address"> {this.props.formattedAddress}</p>
+                                    <br/>
+                                   
                                     <br/>    
                                     <br/>                                
                                      <a data-toggle="collapse" href={`#${this.props._id}`} role="button" aria-expanded="false" aria-controls={this.props._id}>

@@ -1,12 +1,8 @@
-h1{
+h1,h2,h4{
     font-family: 'Acme', sans-serif;;
 }
 
-h2{
-    font-family: 'Acme', sans-serif;;
-}
-
-h3{
+h3,h5{
     font-family: 'Roboto', sans-serif;
 }
 
@@ -20,11 +16,14 @@ h3{
 }
 
 #studyPic{
-    background-image: url("../../img/studying.jpg");
+    background-image: linear-gradient(to right bottom,rgba(246, 247, 247, 0.7),rgba(241, 245, 247, 0.7)),url("../../img/studying.jpg");
     height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #map-col, #jumbo-col {
@@ -40,8 +39,7 @@ h3{
 #mapColumn{
     padding-right: 0px;
 }
-.landingMessage{
-    padding-top: 200px;
-    color:black;
-    font-size: 80px;
+
+.message{
+    font-family: 'Roboto', sans-serif;
 }
