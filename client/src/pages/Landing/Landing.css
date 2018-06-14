@@ -33,3 +33,15 @@ h3{
 #studyPic-col{
     padding: 0px;
 }
+
+#mapRow{
+    height: 400px;
+}
+#mapColumn{
+    padding-right: 0px;
+}
+.landingMessage{
+    padding-top: 200px;
+    color:black;
+    font-size: 80px;
+}

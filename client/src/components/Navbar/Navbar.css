@@ -4,3 +4,6 @@
 .navbar{
     background-color: black;
 }
+.navbar-brand{
+    font-family: 'Acme', sans-serif;;
+}

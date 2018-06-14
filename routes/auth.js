@@ -3,6 +3,8 @@ const usersController = require("../controllers/usersController");
 
 router.post("/users/register", usersController.create);
 
-router.get("/users/login", usersController.read)
+// router.post("/users/login", passport.authenticate("local"),usersController.login)
+
+// router.get("/users/logout", usersController.logout)
 
 module.exports = router;

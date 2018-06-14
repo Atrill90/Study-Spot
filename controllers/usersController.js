@@ -55,7 +55,7 @@ module.exports = {
         }
 
     },
-    read: function (req,res,next){
+    login: function (req,res,next){
         User.findOne({userName : req.body.userName.toLowerCase()})
         .then((user) => {
             console.log(user);

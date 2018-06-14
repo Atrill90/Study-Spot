@@ -3,7 +3,7 @@ import "./Navbar.css";
 const Navbar = () =>(
     <nav className="navbar navbar-expand-lg navbar-dark ">
       <a className="navbar-brand mr-auto" href="/">
-      <i class="fas fa-book"></i>
+      <i className="fas fa-book"></i>
       </a>
       <a className="navbar-brand ml-auto" href="/Spots">
         Spots

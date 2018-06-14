@@ -33,16 +33,18 @@ class SpotCard extends Component {
         let str = this.props.locationName;
         let firstWord = str.split(' ')[0]
         let theRealFirstWord = firstWord.replace(/'/g, '')
-        console.log(theRealFirstWord);
         let starPercentage = (this.props.overallRating / this.state.starsTotal) * 100;
         let starPercentageRounded = `${Math.round(starPercentage / 10) *10}%`;
-        console.log(starPercentageRounded);
     
         this.setState({lat: lat, lng: lng, markers: markers,overallRatingStars: starPercentageRounded,theRealFirstWord:theRealFirstWord})
 
         // document.querySelector(`.${theRealFirstWord}.starsinner`).style.width = starPercentageRounded;
     }
         
+
+    onMarkerClick(){
+        console.log("you so cool");
+      }
 
 
     render() {
@@ -85,6 +87,7 @@ class SpotCard extends Component {
                                     zoom ={15}
                                     // lat = {this.props.lat}
                                     markers = {this.state.markers}
+                                    onMarkerClick = {this.onMarkerClick}
                                     />
                                 </div>
                             </div>

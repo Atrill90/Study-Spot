@@ -107,7 +107,7 @@ class Map extends Component{
                 <Marker 
                     key={index}
                     position={marker.position}
-                    // onClick={() => props.onMarkerClick(marker)}    
+                    onClick={() => this.props.onMarkerClick(marker)}    
                 />
             ))}
             </GoogleMap>

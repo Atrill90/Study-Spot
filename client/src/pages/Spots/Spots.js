@@ -38,6 +38,8 @@ class Spots extends Component {
         this.setState({[name]:value});
         this.userCreate();
      }
+     
+     
 
     render() {
         return(
@@ -45,7 +47,7 @@ class Spots extends Component {
             <Row>
                 <Col size= "md-4" > </Col>    
                 <Col size= "md-4" >
-                    <h1> Find your spot </h1>
+                    <h1 className="text-center"> Find your spot </h1>
                </Col>  
             </Row>
             <br/>
