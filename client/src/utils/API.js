@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // Gets all user
 
-  // Gets the user with the given id
+  // Gets the user with the given username
   loginUser: function(loginData) {
     return axios.post("/auth/users/login", loginData);
   },
