@@ -56,11 +56,12 @@ module.exports = {
 
     },
     login: function (req,res,next){
-        console.log(req.body);
-        User.findOne({userName : req.body.userName.toLowerCase()})
-        .then((user) => {
-            console.log(user);
-        })
+        res.send(req.user)
+        
 
+    },
+    logout: function (req,res,next) {
+        req.logout();
+        res.send ("you are logged out");
     }
 }

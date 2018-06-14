@@ -34,6 +34,7 @@ class Login extends Component {
             password: this.state.loginPassword
         }).then(foundUser =>{
             console.log(foundUser);
+            window.location.href ="/spots"
         })
     }
 

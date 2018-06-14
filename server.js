@@ -1,11 +1,14 @@
 const express = require("express");
 const path = require("path");
 const expressValidator = require('express-validator');
-const expressSession = require('express-sessions');
+const session = require('express-session');
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const app = express();
+const passport = require("passport");
+const cookieParser = require("cookie-parser");
+
 require("dotenv").config();
 
 // Load Models
@@ -14,7 +17,19 @@ require("dotenv").config();
 
 const db = require("./models");
 
+//Passport Strategy
+require("./config/passport")(passport);
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Session Setup
+app.use(session({
+  secret:'secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {maxAge: new Date(Date.now() + (60 * 3000 * 30))}
+}));
 
 mongoose.Promise = global.Promise;
 //MongoConnect
@@ -27,6 +42,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/StudySpot")
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
