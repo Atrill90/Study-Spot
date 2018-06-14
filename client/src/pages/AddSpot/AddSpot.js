@@ -50,7 +50,7 @@ spotCreate = () => {
         document.getElementsByClassName("radioButton").value = 0;
         alert("This spot exists already, please try again")
        }else {
-        alert("successful addition,check it out on the spots page")
+        alert("Successful addition! Go check it out on the spots page!")
          
        }
     }
