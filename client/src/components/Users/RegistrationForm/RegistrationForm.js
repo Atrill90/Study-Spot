@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./RegistrationForm.css";
 
 const RegistrationForm = props => (
-  <div className="card w-75 mt-5 mx-auto p-4">
+  <div className="card w-75 mt-5 mx-auto p-4 mb-5">
    <form  action="/auth/users" method = "POST">
       <div className = "input form-group">
         <label className="mr-3" htmlFor="email">E-mail</label>

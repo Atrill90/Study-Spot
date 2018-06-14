@@ -2,7 +2,7 @@ import React from "react";
 import "./AddSpotForm.css";
 
 const AddSpotForm = props => (
-<div className="card w-75 mt-5 mx-auto p-4">
+<div className="card w-75 mt-5 mx-auto p-4" id="add-a-spot">
     <form>
     <div className = "input form-group">
         <label className="mr-3" htmlFor="location">Location Name</label>

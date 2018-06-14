@@ -36,9 +36,9 @@ module.exports = {
                         }
                     
                         else {
-                // location grabbing goes here
+               
               
-                        // console.log(response.data.businesses[0]);
+                        // create the spot object
                         
                         let photo = searchResult.image_url;
                         let businessID = searchResult.id;
@@ -51,14 +51,6 @@ module.exports = {
                         let overallRating = parseFloat((addedRatings / 6).toFixed(1));
                         console.log(addedRatings);
 
-                        // axios.get(`https://api.yelp.com/v3/businesses/${businessID}`,{ 
-                        //     headers: {
-                        //         Authorization: `Bearer ${token}`
-                        //     }
-                        // })
-                        // .then(businessResponse => {
-                        //     console.log(businessResponse.data.hours[0]);
-                        // })
 
                          let newSpot = {
                             locationName: realName,
@@ -81,8 +73,6 @@ module.exports = {
                         Spots.create(newSpot).then(function (spot) {
                             res.sendStatus(200)
                         })
-                   
-                    
                     }
                 })
         }).catch(error => {
@@ -99,25 +89,3 @@ module.exports = {
 }
 
 
-// function googleSearch(query) {
-   /* axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${query}&location=28.602,-81.200&radius=15&unit=miles&key=AIzaSyBw0BYH9kzgKn12oW7Kqh46e0tpJ9EYg_U`)
-    .then(response => {
-        
-        
-         let searchResult =response.data.results[0];
-        //  console.log(searchResult);
-         let address = searchResult.formatted_address;
-         let lat = searchResult.geometry.location.lat;
-         let lng = searchResult.geometry.location.lng;
-         let googleRating = searchResult.rating;
-         let photo = searchResult.photos[0].photo_reference; 
-         let realName = searchResult.name;
-
-         
-             axios.get(`https://maps.googleapis.com/maps/api/place/photo?photoreference=${photo}&maxheight=500&key=AIzaSyBw0BYH9kzgKn12oW7Kqh46e0tpJ9EYg_U`)
-             .then(response => {
-                 console.log(response.data.req.socket._host);
-             })
-
-})
-*/

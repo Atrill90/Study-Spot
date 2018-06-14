@@ -53,7 +53,7 @@ class Landing extends Component {
             <Col size= "md-12" id ="studyPic-col">
               <div id ="studyPic">
               <div className ="text-center message">
-                <h2> Sick of stuyding at home?</h2>
+                <h2> Sick of studying at home?</h2>
                 <h5> Click on the markers below to explore study spots near UCF </h5>
               </div>  
               </div>
