@@ -9,12 +9,9 @@ module.exports = function (passport) {
         usernameField: 'userName'
     }, (userName, password, done) => {
         console.log("hello passport");
-        db.Users.findOne({
-            where: {
-                username: userName
-            }
-        }).then((user) => {
-            console.log(user);
+        db.Users.findOne({ username: userName})
+        .then((user) => {
+        console.log(user);
             // This is where the user will be returned if there is one
         //     let hashPassword = user.dataValues.password;
         //     if (!user) {

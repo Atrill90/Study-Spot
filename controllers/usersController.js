@@ -33,7 +33,7 @@ module.exports = {
                     errors.push({
                         text: "User already exists, please choose a new username"
                     });
-                    res.redirect('/auth/users/register');
+                    res.send('user exists');
                 } else {
                     let insecurePass = req.body.password;
                     bcrypt.genSalt(10, (err, salt) => {
@@ -46,7 +46,7 @@ module.exports = {
                                 password: hash
                             }
                             User.create(newUser).then(function (user) {
-                                res.redirect("/auth/users/login");
+                                res.send(user);
                             });
                         })
                     })
@@ -56,6 +56,7 @@ module.exports = {
 
     },
     login: function (req,res,next){
+        console.log(req.body);
         User.findOne({userName : req.body.userName.toLowerCase()})
         .then((user) => {
             console.log(user);

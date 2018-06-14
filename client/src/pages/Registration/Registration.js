@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container } from "../../components/Grid";
 import RegistrationForm from "../../components/Users/RegistrationForm"
 import API from "../../utils/API"
+import { resolve } from "upath";
 
 class Registration extends Component {
     constructor (){

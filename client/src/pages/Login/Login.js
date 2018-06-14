@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "../../components/Grid";
 import LoginForm from "../../components/Users/LoginForm"
+import API from "../../utils/API";
 
 class Login extends Component {
     constructor(props){
@@ -23,14 +24,28 @@ class Login extends Component {
         let value = event.target.value;
         console.log("form submission works");
         this.setState({[name]:value});
-        this.userCreate();
-        
+        this.loginRequest();
     }
+
+    loginRequest = () => {
+        console.log("we are loggin in");
+        API.loginUser({
+            userName: this.state.loginUserName,
+            password: this.state.loginPassword
+        }).then(foundUser =>{
+            console.log(foundUser);
+        })
+    }
+
+
     render() {
         return (
             <Container fluid>
                 <h1 className= "text-center"> Login </h1>
-                <LoginForm/>
+                <LoginForm
+                formSubmission = {this.formSubmission}
+                handleChange = {this.handleChange}
+                />
              </Container>
         );
       }

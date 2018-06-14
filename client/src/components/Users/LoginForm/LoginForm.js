@@ -11,7 +11,7 @@ const LoginForm = props => (
 
      <div className = "input form-group">
        <label htmlFor="userName">Password</label>
-          <input onChange={props.handleChange} className="form-control" type="password" placeholder = "Password" id="loginPassword" name="loginUserName"/>
+          <input onChange={props.handleChange} className="form-control" type="password" placeholder = "Password" id="loginPassword" name="loginPassword"/>
 
      </div>
      <button onClick={props.formSubmission} type="submit" className="btn btn-secondary">Submit</button>

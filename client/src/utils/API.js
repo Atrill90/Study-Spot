@@ -4,8 +4,8 @@ export default {
   // Gets all user
 
   // Gets the user with the given id
-  loginUser: function(userName) {
-    return axios.get("/auth/users/login" + userName);
+  loginUser: function(loginData) {
+    return axios.post("/auth/users/login", loginData);
   },
   
   // Saves a user to the database
