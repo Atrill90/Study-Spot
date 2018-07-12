@@ -6,6 +6,6 @@ router.post("/auth/users/register", usersController.create);
 
 router.post("/auth/users/login", passport.authenticate('local'), usersController.login)  //put passport authenticate local back in the middle after 
 
-// router.get("auth/users/logout", usersController.logout)
+router.get("auth/users/logout", usersController.logout)
 
 module.exports = router;

@@ -44,3 +44,32 @@ h3,h5{
 .message{
     font-family: 'Roboto', sans-serif;
 }
+
+@media only screen and (max-width: 425px){
+    #webTitle{
+        font-size: 75px;
+        padding-top: 40px;
+    }
+    #webSlogan{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    #webTitle{
+        font-size: 60px;
+        padding-top: 60px;
+    }
+    #webSlogan{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 375px){
+    #webTitle{
+        font-size: 50px;
+        padding-top: 80px;
+    }
+    #webSlogan{
+        font-size: 15px;
+    }
+}

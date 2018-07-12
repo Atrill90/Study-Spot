@@ -41,7 +41,7 @@ class Landing extends Component {
             <Col size="md-12" id="jumbo-col">
               <Jumbotron>
                 <h1 id ="webTitle">Study Spot</h1>
-                <h3><i class="fas fa-book mr-3"></i>
+                <h3 id = "webSlogan"><i class="fas fa-book mr-3"></i>
 
                 Find a great spot to study 
                 <i class="fas fa-book ml-3"></i>

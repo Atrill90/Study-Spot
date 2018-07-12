@@ -22,3 +22,26 @@
     font-weight: 900;
     color: #f8ce0b;
 }
+.spotBasics{
+    padding-left: 0;
+}
+
+.mapResizer{
+    padding-left: 0;
+}
+
+@media only screen and (max-width: 425px){
+    .spotBasics{
+        padding-left: 13px;
+        padding-top: 20px;
+
+    }
+    .mapResizer>div{
+        height: 150px !important;
+        padding-top: 20px;
+        
+    }
+    .mapResizer{
+        padding-left: 13px;
+    }
+}

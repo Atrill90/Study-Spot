@@ -49,13 +49,13 @@ class SpotCard extends Component {
     render() {
         return(
             <div className="col-12" key = {this.props.id}>   {/*fix this id*/}
-                    <div className="card rounded-0">
+                    <div className="card rounded-0 spotCard">
                         <div className="card-body" id={this.props.locationName}>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-sm-4">
                                     <img src={this.props.image} className="spot-img spotPic" alt={this.props.locationName}/>
                                 </div>
-                                <div className= "col-5 pl-0">
+                                <div className= "col-sm-5 spotBasics">
                                     <p className="spot-name"> <h4>{this.props.locationName} </h4></p>
                                     <p className="overall-rating"><strong>Study Spot Rating: {this.props.overallRating} </strong></p>  
                                     <div className = "stars-outer">
@@ -77,7 +77,7 @@ class SpotCard extends Component {
                                     </div>
                                     
                                 </div>
-                                <div className="col-3 pl-0">
+                                <div className="col-sm-3 mapResizer">
                                     <Map
                                     containerElement ={<div style ={{height:100+'%'}}/>}
                                     mapElement = {<div style ={{height:100+'%'}}/>}
