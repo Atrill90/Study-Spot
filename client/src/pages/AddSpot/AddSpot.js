@@ -9,21 +9,25 @@ class AddSpot extends Component {
     super(props)
     this.state = {
       locationName: "",
-      noiseRating: 0,
-      outletRating: 0,
-      wifiRating: 0,
-      seatingRating: 0,
-      fDRating:0
+      noiseRating: 3,
+      outletRating: 3,
+      wifiRating: 3,
+      seatingRating: 3,
+      fDRating:3
+      
     };
     this.handleChange= this.handleChange.bind(this);
+    this.updateTextInput = this.updateTextInput.bind(this);
 }
 
-
+updateTextInput = val => {
+    document.querySelector('noiseDisplay').value=val; 
+  }
 
 handleChange = event => {
     // console.log(event.target.value);
     // console.log(event.target.name)
-    this.setState({[event.target.name]: event.target.value});
+    this.setState({[event.target.name]: event.target.value})
     // console.log(this.state.edate);
 }
 
@@ -63,10 +67,15 @@ spotCreate = () => {
 render() {
     return (
         <Container>
-            <h1 className= "text-center"> Add a Spot! </h1>
+            <h1 className= "text-center pt-5"> Add a Spot! </h1>
             <AddSpotForm
                  formSubmission = {this.formSubmission}
                  handleChange = {this.handleChange}
+                 noiseRating = {this.state.noiseRating}
+                 outletRating = {this.state.outletRating}
+                 wifiRating = {this.state.wifiRating}
+                 seatingRating = {this.state.seatingRating}
+                 fDRating = {this.state.fDRating}
             />
        </Container>
     );
