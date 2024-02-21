@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "axios": "0.21.0",
+    "axios": "0.28.0",
     "express-session": "1.15.6",
     "express-validator": "5.2.0",
     "morgan": "1.9.1",
